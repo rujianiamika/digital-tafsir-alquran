@@ -153,7 +153,7 @@ const SurahDetail: React.FC = () => {
               <AyatCard
                 key={ayat.ayat}
                 ayatNumber={ayat.ayat}
-                arabic="بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ"
+                arabic={`بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ`}
                 translation="Dengan nama Allah Yang Maha Pengasih, Maha Penyayang."
                 tafsir={ayat.teks}
                 isBookmarked={isBookmarked(surahNumber, ayat.ayat)}
