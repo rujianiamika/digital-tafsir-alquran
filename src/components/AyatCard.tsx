@@ -34,7 +34,7 @@ const AyatCard: React.FC<AyatCardProps> = ({
       id={`ayat-${ayatNumber}`}
     >
       <div className="flex justify-between items-start mb-4">
-        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-islamic-primary/10 text-islamic-primary font-medium">
+        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-islamic-primary/10 text-islamic-primary font-medium dark:bg-islamic-primary/20 dark:text-white">
           {ayatNumber}
         </div>
         <Button
@@ -55,14 +55,14 @@ const AyatCard: React.FC<AyatCardProps> = ({
       </div>
 
       <div className="space-y-6">
-        <p className="arabic-text text-2xl font-arabic leading-loose py-2 text-islamic-primary">
+        <p className="arabic-text text-2xl font-arabic leading-loose py-2 text-islamic-primary dark:text-white">
           {arabic}
         </p>
         
         <div className="border-t border-border pt-4">
-          <p className="text-foreground mb-4 italic">{translation}</p>
-          <div className="text-muted-foreground text-sm space-y-2">
-            <h4 className="font-medium text-base text-foreground mb-1">Tafsir:</h4>
+          <p className="text-foreground mb-4 italic dark:text-gray-100">{translation}</p>
+          <div className="text-muted-foreground text-sm space-y-2 dark:text-gray-200">
+            <h4 className="font-medium text-base text-foreground mb-1 dark:text-white">Tafsir:</h4>
             <p>{tafsir}</p>
           </div>
         </div>
