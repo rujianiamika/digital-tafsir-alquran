@@ -21,8 +21,14 @@ export interface SurahListResponse {
 export interface Ayat {
   ayat: number;
   teks: string;
-  arabic?: string;
-  translation?: string;
+}
+
+export interface AyatDetail {
+  nomor: number;
+  teksArab: string;
+  teksLatin: string;
+  teksIndonesia: string;
+  audio: string;
 }
 
 export interface SurahDetail {
@@ -37,6 +43,7 @@ export interface SurahDetail {
     [key: string]: string;
   };
   tafsir: Ayat[];
+  ayat?: AyatDetail[];
   suratSelanjutnya: Surah | false;
   suratSebelumnya: Surah | false;
 }

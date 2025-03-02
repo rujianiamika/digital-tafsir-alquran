@@ -149,17 +149,22 @@ const SurahDetail: React.FC = () => {
 
           {/* Ayat List */}
           <div className="mt-8 space-y-6">
-            {surah.tafsir.map((ayat) => (
-              <AyatCard
-                key={ayat.ayat}
-                ayatNumber={ayat.ayat}
-                arabic={`بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ`}
-                translation="Dengan nama Allah Yang Maha Pengasih, Maha Penyayang."
-                tafsir={ayat.teks}
-                isBookmarked={isBookmarked(surahNumber, ayat.ayat)}
-                onToggleBookmark={() => handleToggleBookmark(ayat.ayat)}
-              />
-            ))}
+            {surah.tafsir.map((ayat, index) => {
+              // Jika kita memiliki data ayat dari API
+              const ayatData = surah.ayat && surah.ayat[index];
+              
+              return (
+                <AyatCard
+                  key={ayat.ayat}
+                  ayatNumber={ayat.ayat}
+                  arabic={ayatData ? ayatData.teksArab : ""}
+                  translation={ayatData ? ayatData.teksIndonesia : ""}
+                  tafsir={ayat.teks}
+                  isBookmarked={isBookmarked(surahNumber, ayat.ayat)}
+                  onToggleBookmark={() => handleToggleBookmark(ayat.ayat)}
+                />
+              );
+            })}
           </div>
 
           {/* Navigation */}

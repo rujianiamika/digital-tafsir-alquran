@@ -15,11 +15,30 @@ const fetchSurahList = async (): Promise<SurahListResponse> => {
 
 // Function to fetch a specific surah detail with tafsir
 const fetchSurahDetail = async (surahNumber: number): Promise<SurahDetailResponse> => {
-  const response = await fetch(`${API_BASE_URL}/tafsir/${surahNumber}`);
-  if (!response.ok) {
+  // Fetch tafsir first
+  const tafsirResponse = await fetch(`${API_BASE_URL}/tafsir/${surahNumber}`);
+  if (!tafsirResponse.ok) {
+    throw new Error(`Failed to fetch tafsir for surah ${surahNumber}`);
+  }
+  const tafsirData = await tafsirResponse.json();
+  
+  // Then fetch surah detail to get Arabic text and translations
+  const surahResponse = await fetch(`${API_BASE_URL}/surat/${surahNumber}`);
+  if (!surahResponse.ok) {
     throw new Error(`Failed to fetch surah detail for surah ${surahNumber}`);
   }
-  return response.json();
+  const surahData = await surahResponse.json();
+  
+  // Combine the data
+  const combinedData = {
+    ...tafsirData,
+    data: {
+      ...tafsirData.data,
+      ayat: surahData.data.ayat
+    }
+  };
+  
+  return combinedData;
 };
 
 // Custom hook to get the list of surahs
