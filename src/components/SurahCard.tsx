@@ -23,7 +23,7 @@ const SurahCard: React.FC<SurahCardProps> = ({ surah, index }) => {
             {surah.nomor}
           </div>
           <div className="text-right">
-            <h3 className="text-2xl font-arabic font-bold text-islamic-primary">{surah.nama}</h3>
+            <h3 className="text-2xl font-arabic font-bold text-islamic-primary dark:text-white">{surah.nama}</h3>
           </div>
         </div>
         
@@ -32,7 +32,7 @@ const SurahCard: React.FC<SurahCardProps> = ({ surah, index }) => {
           <p className="text-sm text-muted-foreground">{surah.arti}</p>
           
           <div className="flex justify-between items-center pt-2 mt-2 border-t border-border/50">
-            <span className="text-xs inline-flex items-center px-2 py-1 rounded-full bg-islamic-accent text-islamic-primary">
+            <span className="text-xs inline-flex items-center px-2 py-1 rounded-full bg-islamic-accent text-islamic-primary dark:bg-islamic-primary/30 dark:text-white">
               {surah.tempatTurun}
             </span>
             <span className="text-xs text-muted-foreground">
