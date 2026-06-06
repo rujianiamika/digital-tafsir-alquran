@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import AudioPlayer from "../components/AudioPlayer";
 import AyatCard from "../components/AyatCard";
@@ -49,6 +49,8 @@ const SurahDetail: React.FC = () => {
     }
   }, [data]);
 
+  const navigate = useNavigate();
+
   const handleToggleBookmark = (ayatNumber: number) => {
     if (isBookmarked(surahNumber, ayatNumber)) {
       removeBookmark(surahNumber, ayatNumber);
@@ -61,13 +63,13 @@ const SurahDetail: React.FC = () => {
 
   const navigateToPreviousSurah = () => {
     if (data?.data.suratSebelumnya) {
-      window.location.href = `/surah/${data.data.suratSebelumnya.nomor}`;
+      navigate(`/surah/${data.data.suratSebelumnya.nomor}`);
     }
   };
 
   const navigateToNextSurah = () => {
     if (data?.data.suratSelanjutnya) {
-      window.location.href = `/surah/${data.data.suratSelanjutnya.nomor}`;
+      navigate(`/surah/${data.data.suratSelanjutnya.nomor}`);
     }
   };
 
