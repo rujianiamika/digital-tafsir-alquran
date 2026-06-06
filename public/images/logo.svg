@@ -1,2 +1,18 @@
-
-This is a placeholder for the logo SVG
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="32" viewBox="0 0 120 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="120" height="32" rx="8" fill="transparent"/>
+  <g transform="translate(4 4)">
+    <path d="M3 0H17C18.1046 0 19 0.89543 19 2V22C19 22.5523 18.5523 23 18 23H3C1.89543 23 1 22.1046 1 21V2C1 0.89543 1.89543 0 3 0Z" fill="url(#gradient)"/>
+    <path d="M4 2.5H18" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M4 7.5H18" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.8"/>
+    <path d="M4 12.5H14" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.8"/>
+    <path d="M10 2C10 2 12.5 5 12.5 11C12.5 17 10 20.5 10 20.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <text x="34" y="20" fill="#111827" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700">Al-Quran</text>
+</svg>
